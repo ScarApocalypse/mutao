@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .box{
+            position:absolute;
+            /* left:0;
+            top:20px; */
+            width:200px;
+            height:100px;
+            background-color:red;
+        }
+        .btns{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box"></div>
+    <button id="back-btn" class="btns">&lt;</button>
+    <button id="go-btn" class="btns">&gt;</button>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/move.js"></script>
+    <script>
+        var $box=$('#box'),
+            $box2=$('#box2'),
+            $goBtn=$('#go-btn'),
+            $backBtn=$('#back-btn');
+
+        $box.on('move moved',function(e,$elem){
+            console.log(e.type);
+            console.log($elem);
+        });  
+        $box.move({
+            css3:true,
+            js:false
+        });
+        $goBtn.on('click',function(){
+            $box.move('x',-200);
+
+        });
+        $backBtn.on('click',function(){
+            $box.move('x',0);
+            
+        });
+    
+    </script>
+</body>
+</html>
