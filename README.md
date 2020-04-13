@@ -1,3 +1,3 @@
-#慕淘网
-http://sinep12046.cn/mutao/
+### 慕淘网
+http://kuojayblog.xyz/mutao/
 
